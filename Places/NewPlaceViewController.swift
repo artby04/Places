@@ -80,7 +80,7 @@
         } else {
             image = #imageLiteral(resourceName: "imagePlaceholder")
         }
-        
+        // TEST COMMIT
         
         newPlace = Place(name: placeName.text!,
                          location: placeLocation.text,
