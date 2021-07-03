@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Индокитай.jpg",
+      "filename" : "Индокитай-1.jpg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Индокитай@2x.jpg",
+      "filename" : "Индокитай@2x-1.jpg",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Индокитай@3x.jpg",
+      "filename" : "Индокитай@3x-1.jpg",
       "idiom" : "universal",
       "scale" : "3x"
     }
