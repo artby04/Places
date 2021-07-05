@@ -106,7 +106,7 @@
        
         
     }
-    
+    //test
     private func setupEditScreen(){
         if currentPlace != nil {
             setupNavigationBar()
