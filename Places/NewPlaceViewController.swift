@@ -9,7 +9,7 @@
 
  class NewPlaceViewController: UITableViewController, UINavigationControllerDelegate {
     
-    var newPlace = Place()
+
     var imageIsChanged = false
 
     
@@ -25,17 +25,11 @@
      override func viewDidLoad() {
          super.viewDidLoad()
          
-        DispatchQueue.main.async {
-            self.newPlace.savePlaces()
-        }
-        
      
          tableView.tableFooterView = UIView()
-        
-        saveButton.isEnabled = false
-        
-        placeName.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
-     }
+         saveButton.isEnabled = false
+         placeName.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
+         }
      
      // MARK: Table view delegate
      override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -86,12 +80,14 @@
             image = #imageLiteral(resourceName: "imagePlaceholder")
         }
         
+        let imageData = image?.pngData()
+
         
-//        newPlace = Place(name: placeName.text!,
-//                         location: placeLocation.text,
-//                         type: placeType.text,
-//                         image: image,
-//                         restaurantImage: nil )
+        let newPlace = Place(name: placeName.text!,
+                         location: placeLocation.text,
+                         type: placeType.text,
+                         imageData: imageData)
+        StorageManager.saveObject(newPlace)
         
     }
     
