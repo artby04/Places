@@ -10,7 +10,6 @@ import RealmSwift
 
 class MainViewController: UITableViewController {
     
-
     var places: Results<Place>!
     
    
@@ -52,7 +51,7 @@ class MainViewController: UITableViewController {
     }
     
     // MARK: - Table View Delegate test
-        
+    // test
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         
         let place = places[indexPath.row]
@@ -72,7 +71,7 @@ class MainViewController: UITableViewController {
         guard let newPlaceVC = segue.source as? NewPlaceViewController else { return }
 
         
-        newPlaceVC.saveNewPlace()
+        newPlaceVC.savePlace()
         tableView.reloadData()
         
     }
@@ -80,12 +79,18 @@ class MainViewController: UITableViewController {
     
     // MARK: - Navigation
 
-    /*
+
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "showDetail" {
+            guard let indexPath = tableView.indexPathForSelectedRow else {return}
+            let place = places[indexPath.row]
+            
+            let newPlaceVC = segue.destination as! NewPlaceViewController
+            newPlaceVC.currentPlace = place
+        }
+        
     }
-    */
+
  
 }
